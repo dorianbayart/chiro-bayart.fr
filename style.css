@@ -18,10 +18,15 @@
   flex-grow: 1;
 }
 
+.margin-auto {
+  margin: auto;
+}
+
 html {
   min-height: 100dvh;
   font-family: 'Roboto Flex', system-ui, sans-serif;
-  font-weight: 175;
+  font-weight: 200;
+  line-height: 1.5;
   background-color: var(--main-color);
 }
 
@@ -35,6 +40,14 @@ body {
 
 button {
   cursor: pointer;
+  border: 1px solid;
+  background-color: transparent;
+  padding: 0.4rem 0.8rem;
+  width: fit-content;
+}
+
+button:hover {
+  background-color: var(--menu);
 }
 
 a {
@@ -47,8 +60,9 @@ a {
 }
 
 a img {
-  height: 100%;
+  height: 1.25rem;
   width: auto;
+  margin: 0 0.5rem;
 }
 
 header {
@@ -68,8 +82,20 @@ header .top-bar {
 }
 
 header .top-bar > * {
-  margin: 0 2dvw;
+  margin: 0 4dvw 0 2dvw;
   text-wrap: nowrap;
+}
+
+header .top-bar a.rdv-button {
+  cursor: pointer;
+  border: 1px solid;
+  background-color: transparent;
+  padding: 0.4rem 0.8rem;
+  height: 2rem;
+}
+
+header .top-bar a.rdv-button:hover {
+  background-color: var(--menu);
 }
 
 header .menu {
@@ -103,16 +129,26 @@ small {
   font-size: 0.85rem;
 }
 
+header small {
+  margin: 2rem 5dvw;
+}
+
 h1 {
-  display: block;
-  width: fit-content;
   font-size: 1.75rem;
   font-size: min(1.75rem, 6dvw);
-  font-weight: 225;
+  font-weight: 275;
   color: var(--primary);
   margin: 1rem;
   padding: 1rem 0;
   border-bottom: 1px solid;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-size: min(1.5rem, 4dvw);
+  font-weight: 275;
+  color: var(--secondary);
+  padding: 0.25rem 0 1rem;
 }
 
 main,
@@ -121,13 +157,49 @@ main > section {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 2rem;
+  text-align: left;
+  text-wrap: auto;
+}
+
+main a {
+  color: var(--primary);
+}
+
+main section.card {
+  padding: 1rem;
+  background-color: var(--top-bar);
+}
+
+main article {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+main article.centered {
+  justify-content: center;
+  text-align: center;
+}
+
+article div,
+article img:not(.icon) {
+  margin: 2.5rem;
+}
+
+article img {
+  max-width: 40%;
+}
+
+article p {
+  margin: 0.85rem 0;
 }
 
 footer {
   padding: 1dvh 5dvw;
   text-align: end;
   font-size: 0.85rem;
-  color: var(--secondary);
   background: linear-gradient(-60deg, var(--gradient-1-header), var(--gradient-0-header), var(--gradient-2-header));
   background-size: 250% 250%;
   background-position: center;
