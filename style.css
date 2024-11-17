@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..900&display=swap');
+
+:root {
+  --primary: #028395;
+  --secondary: #7c5a81;
+  --top-bar: #7c5a8140;
+  --menu: #02839540;
+}
+
+* {
+  /* transition: all 400ms ease-in-out, transform 75ms ease-in-out, box-shadow 80ms ease-in-out; */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.filler {
+  flex-grow: 1;
+}
+
+html {
+  min-height: 100dvh;
+  font-family: 'Roboto Flex', system-ui, sans-serif;
+  font-weight: 175;
+  background-color: var(--main-color);
+}
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-wrap: balance;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+}
+
+a img {
+  height: 100%;
+  width: auto;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header .top-bar {
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  height: 36px;
+  background-color: var(--top-bar);
+}
+
+header .top-bar > * {
+  margin: 0 2dvw;
+  text-wrap: nowrap;
+}
+
+header .menu {
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 2dvh 5dvw;
+  background-color: var(--menu);
+}
+
+header .menu ul {
+  display: inline-flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+header .menu ul a {
+  padding: 0.5rem;
+  margin: 1dvw;
+}
+
+header .menu ul a:hover {
+  color: var(--secondary);
+  outline: 2px solid var(--secondary);
+}
+
+small {
+  font-size: 0.85rem;
+}
+
+h1 {
+  display: block;
+  width: fit-content;
+  font-size: 1.75rem;
+  font-size: min(1.75rem, 6dvw);
+  font-weight: 225;
+  color: var(--primary);
+  margin: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid;
+}
+
+main,
+main > section {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer {
+  padding: 1dvh 5dvw;
+  text-align: end;
+  font-size: 0.85rem;
+  color: var(--secondary);
+  background: linear-gradient(-60deg, var(--gradient-1-header), var(--gradient-0-header), var(--gradient-2-header));
+  background-size: 250% 250%;
+  background-position: center;
+  box-shadow: 0 -1px 1dvh var(--shadow);
+}
+
+footer:hover {
+  box-shadow: 0 -1px 1dvh 4px var(--shadow);
+}
+
+footer a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 2dvh 0;
+}
