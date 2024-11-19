@@ -1,0 +1,29 @@
+@media (width < 680px) {
+  .filler {
+    display: none;
+  }
+
+  header .menu {
+    padding: 2dvw;
+  }
+
+  main,
+  main > section {
+    margin: 2rem 0.25rem;
+  }
+
+  main article {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: justify;
+  }
+
+  article div,
+  article img:not(.icon) {
+    margin: 0.25rem;
+  }
+
+  section.coords {
+    margin: 2rem -0.25rem;
+  }
+}

@@ -5,6 +5,7 @@
   --secondary: #7c5a81;
   --top-bar: #7c5a8140;
   --menu: #02839540;
+  --html-background: #fafafa;
 }
 
 * {
@@ -12,6 +13,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.align-justify {
+  text-align: justify;
+  justify-content: center;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
 
 .filler {
@@ -22,12 +32,16 @@
   margin: auto;
 }
 
+.margin-top-2rem {
+  margin-top: 2rem;
+}
+
 html {
   min-height: 100dvh;
   font-family: 'Roboto Flex', system-ui, sans-serif;
   font-weight: 200;
   line-height: 1.5;
-  background-color: var(--main-color);
+  background-color: var(--html-background);
 }
 
 body {
@@ -41,13 +55,16 @@ body {
 button {
   cursor: pointer;
   border: 1px solid;
+  border-radius: 0.4rem;
+  font-weight: 350;
+  color: var(--secondary);
   background-color: transparent;
   padding: 0.4rem 0.8rem;
   width: fit-content;
 }
 
 button:hover {
-  background-color: var(--menu);
+  background-color: var(--top-bar);
 }
 
 a {
@@ -56,13 +73,30 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   height: inherit;
 }
 
-a img {
+a img,
+p img {
   height: 1.25rem;
   width: auto;
   margin: 0 0.5rem;
+}
+
+b {
+  font-weight: 350;
+}
+
+p:has(img) {
+  display: flex;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 2dvh 0;
 }
 
 header {
@@ -72,17 +106,19 @@ header {
 }
 
 header .top-bar {
+  position: sticky;
+  top: 0;
   z-index: 10;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-evenly;
   width: 100%;
-  height: 36px;
   background-color: var(--top-bar);
 }
 
 header .top-bar > * {
-  margin: 0 4dvw 0 2dvw;
+  margin: 0.25rem 4dvw 0.25rem 2dvw;
   text-wrap: nowrap;
 }
 
@@ -102,9 +138,11 @@ header .menu {
   z-index: 8;
   display: flex;
   align-items: center;
+  font-weight: 275;
   width: 100%;
   padding: 2dvh 5dvw;
   background-color: var(--menu);
+  box-shadow: 0 1dvh 1dvh var(--menu);
 }
 
 header .menu ul {
@@ -123,6 +161,11 @@ header .menu ul a {
 header .menu ul a:hover {
   color: var(--secondary);
   outline: 2px solid var(--secondary);
+}
+
+header .main-logo {
+  height: 100%;
+  width: auto;
 }
 
 small {
@@ -145,7 +188,7 @@ h1 {
 
 h2 {
   font-size: 1.5rem;
-  font-size: min(1.5rem, 4dvw);
+  font-size: min(1.5rem, 5dvw);
   font-weight: 275;
   color: var(--secondary);
   padding: 0.25rem 0 1rem;
@@ -169,6 +212,12 @@ main a {
 main section.card {
   padding: 1rem;
   background-color: var(--top-bar);
+  box-shadow: 0 0 2dvh var(--top-bar);
+  border-radius: 0.85rem;
+}
+
+main section.card.card-large-padding {
+  padding: 4dvh 8dvw;
 }
 
 main article {
@@ -189,33 +238,52 @@ article img:not(.icon) {
 }
 
 article img {
-  max-width: 40%;
+  max-width: 35%;
 }
 
 article p {
   margin: 0.85rem 0;
 }
 
+section.coords {
+  margin: 2rem -2rem;
+}
+
+section.coords button {
+  margin: 1rem auto;
+}
+
+section.coords iframe {
+  min-height: 325px;
+  filter: grayscale(1);
+  transition: filter 275ms ease-in-out;
+}
+
+section.coords:hover iframe {
+  filter: grayscale(0);
+}
+
 footer {
   padding: 1dvh 5dvw;
   text-align: end;
   font-size: 0.85rem;
-  background: linear-gradient(-60deg, var(--gradient-1-header), var(--gradient-0-header), var(--gradient-2-header));
-  background-size: 250% 250%;
-  background-position: center;
-  box-shadow: 0 -1px 1dvh var(--shadow);
+  box-shadow: 0 -1dvh 1dvh var(--top-bar);
+  background-color: var(--top-bar);
 }
 
-footer:hover {
-  box-shadow: 0 -1px 1dvh 4px var(--shadow);
+footer .footer-links ul {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
-footer a {
-  text-decoration: none;
+footer .footer-links ul li {
+  text-align: center;
+  flex-basis: 40dvw;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 2dvh 0;
+footer .footer-links ul a {
+  padding: 0.1rem 0.2rem;
+  margin: 0.5rem 2rem;
 }
