@@ -64,7 +64,7 @@ button {
 }
 
 button:hover {
-  background-color: var(--top-bar);
+  box-shadow: 0 0 12px var(--primary);
 }
 
 a {
@@ -237,8 +237,10 @@ article img:not(.icon) {
   margin: 2.5rem;
 }
 
-article img {
+article img:not(.icon) {
   max-width: 35%;
+  border-radius: 0.75rem;
+  box-shadow: 0px 0px 8px gray;
 }
 
 article p {
