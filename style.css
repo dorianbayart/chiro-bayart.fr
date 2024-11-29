@@ -9,7 +9,7 @@
 }
 
 * {
-  /* transition: all 400ms ease-in-out, transform 75ms ease-in-out, box-shadow 80ms ease-in-out; */
+  transition: all 85ms ease-in-out, box-shadow 185ms ease-in-out;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -128,10 +128,11 @@ header .top-bar a.rdv-button {
   background-color: transparent;
   padding: 0.4rem 0.8rem;
   height: 2rem;
+  border-radius: 0.5rem;
 }
 
 header .top-bar a.rdv-button:hover {
-  background-color: var(--menu);
+  border-radius: 0;
 }
 
 header .menu {
@@ -156,6 +157,7 @@ header .menu ul {
 header .menu ul a {
   padding: 0.5rem;
   margin: 1dvw;
+  border-radius: 0.5rem;
 }
 
 header .menu ul a:hover {
