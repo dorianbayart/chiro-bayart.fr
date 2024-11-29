@@ -21,6 +21,7 @@
   article div,
   article img:not(.icon) {
     margin: 0.25rem;
+    flex-basis: unset;
   }
 
   section.coords {
