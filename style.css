@@ -118,8 +118,12 @@ header .top-bar {
 }
 
 header .top-bar > * {
-  margin: 0.25rem 4dvw 0.25rem 2dvw;
+  margin: 0.25rem 3dvw;
   text-wrap: nowrap;
+}
+
+header .top-bar > *:hover {
+  transform: scale(1.1);
 }
 
 header .top-bar a.rdv-button {
@@ -133,6 +137,15 @@ header .top-bar a.rdv-button {
 
 header .top-bar a.rdv-button:hover {
   border-radius: 0;
+}
+
+header .top-bar a.facebook-link {
+  margin: 0.25rem 3rem 0.25rem 1rem;
+}
+
+header .top-bar a.facebook-link img {
+  height: 2rem;
+  width: auto;
 }
 
 header .menu {
